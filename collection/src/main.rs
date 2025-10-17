@@ -1,22 +1,44 @@
+//vec
+// fn main() {
+//   let mut todos = Vec::new();
+//   todos.push("learn rust");
+//   todos.push("build a project");
 
+//   println!("MY todos");
+
+//   for todo in &todos{
+//     println!("{}",todo);
+//   };
+
+//   todos.pop();
+
+//   println!("after removing last");
+//   for todo in &todos{
+//       println!("{}",todo);
+//   }
+
+// }
+
+use std::collections::HashMap;
 
 fn main() {
-  let mut todos = Vec::new();
-  todos.push("learn rust");
-  todos.push("build a project");
+    let mut marks = HashMap::new();
 
-  println!("MY todos");
+    marks.insert("Math", 90);
+    marks.insert("Science", 90);
+    marks.insert("Hindi", 90);
+    marks.insert("English", 93);
 
-  for todo in &todos{
-    println!("{}",todo);
-  };
+    if let Some(mark) = marks.get("Science") {
+        println!("Marks:{}", mark)
+    };
 
-  todos.pop();
+    marks.insert("Math", 100);
+    marks.remove("Hindi");
 
-  println!("after removing last");
-  for todo in &todos{
-      println!("{}",todo);
-  }
+    for(subject,marks) in &marks{
+      println!("{}=>{}",subject,marks);
+    }
 
 
 }
