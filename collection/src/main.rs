@@ -19,26 +19,49 @@
 
 // }
 
-use std::collections::HashMap;
+// use std::collections::HashMap;
 
-fn main() {
-    let mut marks = HashMap::new();
+// fn main() {
+//     let mut marks = HashMap::new();
 
-    marks.insert("Math", 90);
-    marks.insert("Science", 90);
-    marks.insert("Hindi", 90);
-    marks.insert("English", 93);
+//     marks.insert("Math", 90);
+//     marks.insert("Science", 90);
+//     marks.insert("Hindi", 90);
+//     marks.insert("English", 93);
 
-    if let Some(mark) = marks.get("Science") {
-        println!("Marks:{}", mark)
-    };
+//     if let Some(mark) = marks.get("Science") {
+//         println!("Marks:{}", mark)
+//     };
 
-    marks.insert("Math", 100);
-    marks.remove("Hindi");
+//     marks.insert("Math", 100);
+//     marks.remove("Hindi");
 
-    for(subject,marks) in &marks{
-      println!("{}=>{}",subject,marks);
-    }
+//     for(subject,marks) in &marks{
+//       println!("{}=>{}",subject,marks);
+//     }
 
+
+// }
+
+use std::collections::HashSet;
+
+fn main(){
+  let mut fruits =HashSet::new();
+  fruits.insert("Apple");
+  fruits.insert("Apple");
+  fruits.insert("Banana");
+  fruits.insert("Mango");
+
+   println!("{:?}", fruits);
+
+   if fruits.contains("Mango"){
+    println!("Mango is in the set");
+    
+   }
+   fruits.remove("Banana");
+
+   for fruit in &fruits{
+    println!("{}",fruit);
+   }
 
 }
